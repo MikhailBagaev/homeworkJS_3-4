@@ -7,9 +7,7 @@ var mainForm = {
 	buttonText: "Проверить мои результаты",
 	question: 3,
 	answer: 3,
-	build: function() {
-
-    
+	build: function() {    
 
 //form
 
@@ -35,7 +33,7 @@ mainHeader.style.textAlign = 'center';
 mainHeader.style.margin = '20px 0 40px 0';
 
 
-// //ol 
+//ol 
 
 var ol = document.createElement('ol');
 mainForm.appendChild(ol);
@@ -52,19 +50,19 @@ for (question = 1; question <= 3; question++) {
 	ul.style.margin = '10px 0';
 	ul.style.paddingLeft = '0';
 
-for (answer = 1; answer <= 3; answer++) {
-    var label = document.createElement('label');
-    ul.appendChild(label);
+for (answer = 1; answer <= 3; answer++) {    
     var innerLi = document.createElement('li'); 	
-	label.appendChild(innerLi);
+	ul.appendChild(innerLi);
+	var label = document.createElement('label');
+    innerLi.appendChild(label);
 	var checkBox = document.createElement('input');
     checkBox.type = "checkbox";    
     checkBox.name = "quest" + question + "-answ" + answer;
-    innerLi.appendChild(checkBox); 
+    label.appendChild(checkBox); 
     innerLi.style.listStyle = 'none'; 
     var span = document.createElement('span');
     span.innerHTML = "Вариант ответа №" + answer;
-    innerLi.appendChild(span);
+    label.appendChild(span);
 } 
 } 
 
@@ -81,6 +79,12 @@ for (answer = 1; answer <= 3; answer++) {
 }
 
 mainForm.build();
+
+
+
+
+
+
 
 
 
